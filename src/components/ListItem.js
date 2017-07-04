@@ -8,15 +8,7 @@ class ListItem extends Component{
         LayoutAnimation.spring();
     }
     
-    renderDescription(){
-        const {library,expanded} = this.props;
-        if( expanded){
-            return (
-                <CardSection>
-                    <Text style={{flex:1, paddingLeft:15}}>
-                        {library.description}
-                    </Text>
-                </CardSection>
+   
                 
             );
         }
