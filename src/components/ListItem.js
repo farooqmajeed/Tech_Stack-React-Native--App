@@ -3,12 +3,24 @@ import {CardSection} from './common'
 import {View,Text, TouchableWithoutFeedback, LayoutAnimation} from 'react-native';
 import * as actions from '../action';
 import {connect} from 'react-redux';
+
 class ListItem extends Component{
     componentWillUpdate(){
         LayoutAnimation.spring();
     }
     
-   
+    renderDescription(){
+        const {library,expanded} = this.props;
+        console.log("library", this.props.library);
+        console.log("expanded", this.props.expanded)
+        
+        if( expanded){
+            return (
+                <CardSection>
+                    <Text style={{flex:1, paddingLeft:15}}>
+                        {library.description}
+                    </Text>
+                </CardSection>
                 
             );
         }
