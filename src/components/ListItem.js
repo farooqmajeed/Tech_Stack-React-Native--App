@@ -29,7 +29,17 @@ class ListItem extends Component{
         const {titleStyles} = styles;
         const {id, title} = this.props.library
         return (
-            
+            <TouchableWithoutFeedback onPress={()=>this.props.selectLibrary(id)}>
+                <View>
+                    <CardSection>
+                        <Text style={titleStyles}>
+                            {title}
+                        </Text>
+                    </CardSection> 
+                    {this.renderDescription()}
+                </View>
+                
+            </TouchableWithoutFeedback>
             
         );
     }
